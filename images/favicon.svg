@@ -1,0 +1,5 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="5" />
+    <text x="35" y="65" font-family="serif" font-size="45" font-weight="bold" fill="#30D5C8" style="user-select: none;">B</text>
+    <text x="55" y="65" font-family="serif" font-size="45" font-weight="bold" fill="#0ea5e9" style="user-select: none; mix-blend-mode: multiply; opacity: 0.8;">B</text>
+</svg>
