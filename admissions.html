@@ -62,7 +62,7 @@
     </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
+<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden overflow-y-auto">
 
     <!-- Navigation -->
     <header
@@ -84,7 +84,7 @@
             </a>
 
             <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center space-x-2">
+            <nav class="hidden lg:flex items-center space-x-2">
                 <a href="index.html"
                     class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-primary transition-colors">Ana
                     Sayfa</a>
@@ -104,7 +104,7 @@
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn"
-                class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-slate-50 transition-colors">
+                class="lg:hidden text-slate-600 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-slate-50 transition-colors">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
@@ -113,7 +113,7 @@
     <div class="pt-20 pb-0 min-h-screen">
 
         <!-- Split Hero Section -->
-        <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+        <section class="relative min-h-screen lg:min-h-[80vh] flex flex-col lg:flex-row items-stretch overflow-hidden">
             <!-- Left: Dark Side with Journey Info -->
             <div class="hidden lg:flex w-1/2 bg-slate-900 min-h-[80vh] items-center justify-center relative">
                 <div class="absolute top-0 left-0 w-full h-full">
@@ -514,7 +514,8 @@
                 <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
                     <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 block">SSS</span>
                     <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl mb-6 text-slate-900">Sık Sorulan
-                        <span class="text-primary">Sorular</span></h2>
+                        <span class="text-primary">Sorular</span>
+                    </h2>
                 </div>
 
                 <div class="max-w-3xl mx-auto space-y-4">
