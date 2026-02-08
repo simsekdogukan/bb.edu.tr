@@ -4,19 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akademik - BB Eğitim Danışmanlığı</title>
+    <title>Hizmetler - BB Eğitim Danışmanlığı</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css?v=2">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        html {
+            background-color: #0f172a;
+        }
+
+        body {
+            background-color: #f8fafc;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #30D5C8 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .glow-icon {
+            box-shadow: 0 0 30px rgba(48, 213, 200, 0.3);
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#20B2AA', secondary: '#f0fdfc' },
-                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] }
+                    colors: { primary: '#30D5C8' },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
                 }
             }
         }
@@ -30,9 +69,7 @@
         class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-3 md:py-4 transition-all duration-300"
         id="navbar">
         <div class="container mx-auto px-4 flex items-center justify-between h-16 md:h-auto">
-            <!-- Logo Section -->
             <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
-                <!-- SVG Logo: Adjusted size for mobile -->
                 <svg width="40" height="40" viewBox="0 0 100 100" class="drop-shadow-md md:w-[48px] md:h-[48px]">
                     <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="2" />
                     <text x="35" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#30D5C8"
@@ -65,69 +102,232 @@
                     Al</a>
             </nav>
 
-            <!-- Mobile Menu Button: Aligned and sized -->
+            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn"
                 class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-slate-50 transition-colors">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-
-
     </header>
 
-    <div class="pt-24 pb-16 min-h-screen">
-        <!-- Service Section 1: Private Tutoring -->
-        <section class="py-24 bg-white relative overflow-hidden">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
-                    <div class="lg:w-1/2" data-aos="fade-right">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-secondary/20 rounded-[3rem] rotate-3 transform"></div>
-                            <img src="images/academics-tutoring.png" alt="Akademik Mükemmeliyet"
-                                class="relative z-10 rounded-[3rem] shadow-2xl premium-glow w-full object-cover">
+    <div class="pt-20 pb-0 min-h-screen">
+
+        <!-- Split Hero Section -->
+        <section class="relative min-h-[80vh] flex items-center overflow-hidden">
+            <!-- Left: Dark Side -->
+            <div class="hidden lg:flex w-1/2 bg-slate-900 min-h-[80vh] items-center justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-32 right-20 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
+                </div>
+
+                <div class="relative z-10 px-12 xl:px-16 py-16 max-w-xl">
+                    <span
+                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 px-4 py-2 bg-primary/10 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        HİZMETLERİMİZ
+                    </span>
+
+                    <h1 class="font-display font-bold text-4xl xl:text-5xl text-white mb-6 leading-tight">
+                        Başarıya Giden<br>
+                        <span class="gradient-text">Yolculuğunuz</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-base xl:text-lg leading-relaxed mb-8">
+                        Liseden yüksek lisansa, her adımda yanınızdayız. Kişiselleştirilmiş programlarımızla
+                        hayallerinizdeki üniversiteye ulaşın.
+                    </p>
+
+                    <!-- Quick Services -->
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                            </div>
+                            <span class="text-white text-sm font-medium">Lise & Üniversite Hazırlık</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                                <i class="fas fa-briefcase text-blue-400"></i>
+                            </div>
+                            <span class="text-white text-sm font-medium">Master & MBA Danışmanlığı</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                                <i class="fas fa-file-alt text-emerald-400"></i>
+                            </div>
+                            <span class="text-white text-sm font-medium">Essay & Başvuru Koçluğu</span>
                         </div>
                     </div>
-                    <div class="lg:w-1/2" data-aos="fade-left">
-                        <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">LİSE &
+                </div>
+            </div>
+
+            <!-- Right: Light Side with Service Overview -->
+            <div
+                class="w-full lg:w-1/2 min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 relative px-4 sm:px-6 py-16 lg:py-0">
+                <div
+                    class="absolute top-0 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-primary/5 rounded-full blur-3xl -mr-24 sm:-mr-48 -mt-24 sm:-mt-48">
+                </div>
+
+                <!-- Mobile Header -->
+                <div class="lg:hidden text-center mb-8">
+                    <span
+                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 px-4 py-2 bg-primary/10 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        HİZMETLERİMİZ
+                    </span>
+                    <h1 class="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-4">Başarıya Giden
+                        Yolculuğunuz</h1>
+                    <p class="text-slate-500 text-sm sm:text-base">Kişiselleştirilmiş programlarla hayallerinize ulaşın.
+                    </p>
+                </div>
+
+                <!-- Main Service Cards -->
+                <div class="glass-card w-full max-w-lg p-6 sm:p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-slate-200/50 relative z-10"
+                    data-aos="fade-up">
+                    <h2 class="font-display font-bold text-xl sm:text-2xl text-slate-900 mb-6 text-center">Ana Hizmet
+                        Alanlarımız</h2>
+
+                    <div class="space-y-4">
+                        <!-- Service 1 -->
+                        <a href="#tutoring"
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-primary/10 to-blue-500/5 border border-primary/10 hover:border-primary/30 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-white text-xl glow-icon shrink-0">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Akademik Mükemmeliyet
+                                </h3>
+                                <p class="text-slate-500 text-xs sm:text-sm truncate">IB, AP, A-Level, SAT, ACT hazırlık
+                                </p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-primary opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></i>
+                        </a>
+
+                        <!-- Service 2 -->
+                        <a href="#consultancy"
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-blue-500/10 to-primary/5 border border-blue-500/10 hover:border-blue-500/30 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl shrink-0">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Stratejik Danışmanlık
+                                </h3>
+                                <p class="text-slate-500 text-xs sm:text-sm truncate">Master, MBA ve kariyer planlaması
+                                </p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></i>
+                        </a>
+
+                        <!-- Service 3 -->
+                        <a href="#essay"
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 hover:border-emerald-500/30 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-emerald-500 flex items-center justify-center text-white text-xl shrink-0">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">Essay Koçluğu</h3>
+                                <p class="text-slate-500 text-xs sm:text-sm truncate">Personal statement & portfolio</p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-teal-600 text-white rounded-full font-semibold text-sm transition-all shadow-lg shadow-primary/25">
+                            <span>Ücretsiz Danışmanlık</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 1: Academic Excellence -->
+        <section id="tutoring" class="py-16 sm:py-24 bg-white relative overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+                    <!-- Image -->
+                    <div class="w-full lg:w-1/2" data-aos="fade-right">
+                        <div class="relative">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-3xl rotate-3">
+                            </div>
+                            <div class="relative z-10 bg-slate-900 rounded-3xl p-6 sm:p-8 overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+                                <div class="relative z-10 text-center">
+                                    <div
+                                        class="w-20 h-20 mx-auto rounded-2xl bg-primary/20 flex items-center justify-center mb-6">
+                                        <i class="fas fa-book-reader text-primary text-4xl"></i>
+                                    </div>
+                                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-4">Akademik
+                                        Mükemmeliyet</h3>
+                                    <div class="grid grid-cols-2 gap-3 sm:gap-4 text-center mt-6">
+                                        <div class="p-3 sm:p-4 rounded-xl bg-white/5">
+                                            <div class="text-xl sm:text-2xl font-bold text-primary">IB</div>
+                                            <div class="text-xs text-slate-400">Diploma</div>
+                                        </div>
+                                        <div class="p-3 sm:p-4 rounded-xl bg-white/5">
+                                            <div class="text-xl sm:text-2xl font-bold text-blue-400">AP</div>
+                                            <div class="text-xs text-slate-400">Classes</div>
+                                        </div>
+                                        <div class="p-3 sm:p-4 rounded-xl bg-white/5">
+                                            <div class="text-xl sm:text-2xl font-bold text-emerald-400">SAT</div>
+                                            <div class="text-xs text-slate-400">1500+</div>
+                                        </div>
+                                        <div class="p-3 sm:p-4 rounded-xl bg-white/5">
+                                            <div class="text-xl sm:text-2xl font-bold text-amber-400">ACT</div>
+                                            <div class="text-xs text-slate-400">34+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="w-full lg:w-1/2" data-aos="fade-left">
+                        <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 block">LİSE &
                             ÜNİVERSİTE HAZIRLIK</span>
-                        <h2 class="font-display font-bold text-3xl md:text-5xl mb-6 text-slate-900">Akademik <span
-                                class="text-primary">Mükemmeliyet</span></h2>
-                        <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl mb-6 text-slate-900">Akademik
+                            <span class="text-primary">Mükemmeliyet</span></h2>
+                        <p class="text-slate-600 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
                             Sadece ders notlarını yükseltmeyi değil, öğrencinin potansiyelini en üst düzeye çıkarmayı
-                            hedefliyoruz.
-                            Dünyanın en iyi üniversitelerinin kapılarını aralayan uluslararası müfredatlarla (IB, AP,
-                            A-Level)
-                            sınavlara (SAT, ACT, IELTS/TOEFL) entegre bir hazırlık süreci sunuyoruz.
+                            hedefliyoruz. Dünyanın en iyi üniversitelerinin kapılarını aralayan uluslararası
+                            müfredatlarla entegre hazırlık sunuyoruz.
                         </p>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div
-                                class="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-primary/30 transition-all">
-                                <i class="fas fa-book-reader text-primary text-2xl mb-3"></i>
-                                <h4 class="font-bold text-slate-800 mb-2">IB & AP & A-Level</h4>
-                                <p class="text-xs text-slate-500">Uluslararası müfredatlarda uzman eğitmenlerle GPA
-                                    maksimizasyonu.</p>
+                                class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all">
+                                <i class="fas fa-book-reader text-primary text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-slate-800 mb-2 text-sm sm:text-base">IB & AP & A-Level</h4>
+                                <p class="text-xs text-slate-500">Uzman eğitmenlerle GPA maksimizasyonu.</p>
                             </div>
                             <div
-                                class="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-primary/30 transition-all">
-                                <i class="fas fa-chart-line text-primary text-2xl mb-3"></i>
-                                <h4 class="font-bold text-slate-800 mb-2">SAT & ACT Skoru</h4>
-                                <p class="text-xs text-slate-500">Hedeflenen üniversiteler için gereken %1'lik dilim
-                                    skorları.</p>
+                                class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all">
+                                <i class="fas fa-chart-line text-primary text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-slate-800 mb-2 text-sm sm:text-base">SAT & ACT Skoru</h4>
+                                <p class="text-xs text-slate-500">Hedef: %1'lik dilim skorları.</p>
                             </div>
                             <div
-                                class="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-primary/30 transition-all">
-                                <i class="fas fa-microscope text-primary text-2xl mb-3"></i>
-                                <h4 class="font-bold text-slate-800 mb-2">Proje & Araştırma</h4>
-                                <p class="text-xs text-slate-500">Bilimsel araştırmalar ve akademik projelerle CV
-                                    güçlendirme.</p>
+                                class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all">
+                                <i class="fas fa-microscope text-primary text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-slate-800 mb-2 text-sm sm:text-base">Proje & Araştırma</h4>
+                                <p class="text-xs text-slate-500">CV güçlendirici akademik projeler.</p>
                             </div>
                             <div
-                                class="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-primary/30 transition-all">
-                                <i class="fas fa-user-graduate text-primary text-2xl mb-3"></i>
-                                <h4 class="font-bold text-slate-800 mb-2">1-e-1 Mentörlük</h4>
-                                <p class="text-xs text-slate-500">Her öğrencinin öğrenme stiline uygun
-                                    kişiselleştirilmiş program.</p>
+                                class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all">
+                                <i class="fas fa-user-graduate text-primary text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-slate-800 mb-2 text-sm sm:text-base">1-e-1 Mentörlük</h4>
+                                <p class="text-xs text-slate-500">Kişiselleştirilmiş öğrenme programı.</p>
                             </div>
                         </div>
                     </div>
@@ -135,379 +335,256 @@
             </div>
         </section>
 
-        <!-- Service Section 2: Consultancy -->
-        <section class="py-24 bg-slate-50 relative overflow-hidden">
+        <!-- Service 2: Strategic Consultancy -->
+        <section id="consultancy" class="py-16 sm:py-24 bg-slate-900 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16">
+                    <!-- Visual -->
+                    <div class="w-full lg:w-1/2" data-aos="fade-left">
+                        <div class="bg-gradient-to-br from-blue-500/20 to-primary/20 rounded-3xl p-6 sm:p-8">
+                            <div class="text-center">
+                                <div
+                                    class="w-20 h-20 mx-auto rounded-2xl bg-blue-500/30 flex items-center justify-center mb-6">
+                                    <i class="fas fa-compass text-blue-400 text-4xl"></i>
+                                </div>
+                                <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-4">Stratejik
+                                    Danışmanlık</h3>
+                                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">Harvard</span>
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">Stanford</span>
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">MIT</span>
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">Oxford</span>
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">Cambridge</span>
+                                    <span
+                                        class="px-3 sm:px-4 py-2 rounded-full bg-white/10 text-white text-xs sm:text-sm">LSE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="w-full lg:w-1/2" data-aos="fade-right">
+                        <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 block">MASTER &
+                            MBA</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl mb-6 text-white">Stratejik
+                            <span class="text-primary">Danışmanlık</span></h2>
+                        <p class="text-slate-400 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
+                            Yüksek lisans ve MBA süreçlerinde size özel strateji geliştiriyoruz. Hedef okul seçiminden
+                            burs süreçlerine, mülakat hazırlığından kabul sonrasına kadar tüm aşamalarda profesyonel
+                            destek.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div
+                                class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                                <i class="fas fa-bullseye text-primary text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-2 text-sm sm:text-base">Hedef Belirleme</h4>
+                                <p class="text-xs text-slate-400">Kariyer hedeflerine uygun okul seçimi.</p>
+                            </div>
+                            <div
+                                class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                                <i class="fas fa-coins text-amber-400 text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-2 text-sm sm:text-base">Burs Stratejisi</h4>
+                                <p class="text-xs text-slate-400">Tam burs ve finansal destek rehberliği.</p>
+                            </div>
+                            <div
+                                class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                                <i class="fas fa-user-tie text-blue-400 text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-2 text-sm sm:text-base">Mülakat Hazırlık</h4>
+                                <p class="text-xs text-slate-400">Gerçekçi simülasyonlarla hazırlık.</p>
+                            </div>
+                            <div
+                                class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                                <i class="fas fa-globe text-emerald-400 text-xl sm:text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-2 text-sm sm:text-base">Global Network</h4>
+                                <p class="text-xs text-slate-400">20+ ülkede alumni bağlantıları.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 3: Essay Coaching -->
+        <section id="essay" class="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
             <div class="container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-                    <div class="lg:w-1/2" data-aos="fade-left">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-primary/10 rounded-[3rem] -rotate-3 transform"></div>
-                            <img src="images/academics-consultancy.png" alt="Stratejik Danışmanlık"
-                                class="relative z-10 rounded-[3rem] shadow-2xl premium-glow w-full object-cover">
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2" data-aos="fade-right">
-                        <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">MASTER & MBA
-                            & KARİYER</span>
-                        <h2 class="font-display font-bold text-3xl md:text-5xl mb-6 text-slate-900">Stratejik <span
-                                class="text-primary">Danışmanlık</span></h2>
-                        <p class="text-slate-600 text-lg mb-8 leading-relaxed">
-                            Kabul almak sadece notlardan ibaret değildir; bu bir pazarlama ve strateji oyunudur.
-                            Global kariyer hedeflerinizle örtüşen okulları belirliyor, sizi rakiplerinizden ayıracak
-                            özgün hikayenizi (Personal Statement) kurguluyor ve mülakat simülasyonlarıyla kusursuz
-                            başvurular hazırlıyoruz.
-                        </p>
+                <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 block">ESSAY &
+                        BAŞVURU</span>
+                    <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl mb-6 text-slate-900">Hikayenizi
+                        <span class="text-primary">Yazın</span></h2>
+                    <p class="text-slate-500 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">Personal Statement,
+                        sizin sesinizle yazılmış en güçlü hikayenizdir. Biz sadece düzeltmiyoruz, birlikte keşfediyoruz.
+                    </p>
+                </div>
 
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-md shrink-0">
-                                    <i class="fas fa-globe-americas"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-lg">Global Üniversite Ağı</h4>
-                                    <p class="text-slate-500">Ivy League, Russell Group ve Avrupa'nın en prestijli
-                                        okullarına doğrudan erişim stratejileri.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-md shrink-0">
-                                    <i class="fas fa-pen-fancy"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-lg">Naratif ve Essay Editörlüğü</h4>
-                                    <p class="text-slate-500">Sıradan bir CV'yi etkileyici bir başarı hikayesine
-                                        dönüştüren profesyonel dokunuşlar.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-md shrink-0">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-lg">Kariyer Haritası</h4>
-                                    <p class="text-slate-500">Sadece üniversite kabulü değil, mezuniyet sonrası global
-                                        iş fırsatlarına yönelik uzun vadeli planlama.</p>
-                                </div>
-                            </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Essay Service 1 -->
+                    <div class="service-card bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100 hover:border-primary/30"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-primary text-2xl"></i>
                         </div>
+                        <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 mb-3">Hikaye Keşfi</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Sizi benzersiz kılan deneyimleri ve
+                            perspektifi birlikte keşfediyoruz.</p>
+                    </div>
+
+                    <!-- Essay Service 2 -->
+                    <div class="service-card bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100 hover:border-primary/30"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-pen-nib text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 mb-3">Yazım Koçluğu</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Her taslağı birlikte geliştirip
+                            mükemmelleştiriyoruz.</p>
+                    </div>
+
+                    <!-- Essay Service 3 -->
+                    <div class="service-card bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100 hover:border-primary/30 sm:col-span-2 lg:col-span-1"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-check-double text-emerald-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900 mb-3">Final Review</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Son kontrollerle kusursuz bir başvuru dosyası
+                            oluşturuyoruz.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h1 class="font-display font-bold text-4xl md:text-6xl text-slate-900 mb-4">Danışmanlık Paketleri</h1>
-                <p class="text-slate-500 text-lg max-w-2xl mx-auto">Hedeflerinize ve bütçenize en uygun paketi seçin.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Package 1 -->
+        <!-- Pricing CTA -->
+        <section class="py-16 sm:py-24 bg-slate-900 relative overflow-hidden">
+            <div class="absolute inset-0">
                 <div
-                    class="p-10 rounded-[2.5rem] flex flex-col h-full border border-slate-200 bg-white shadow-xl hover:-translate-y-2 transition-transform">
-                    <div class="mb-8">
-                        <h3 class="font-display font-bold text-2xl mb-2">Tam Destek Paketi</h3>
-                        <p class="text-primary font-semibold">4 Yıllık Yolculuk</p>
-                    </div>
-                    <p class="text-sm mb-8 leading-relaxed text-slate-500">Lisenin ilk gününden üniversiteye kabulüne
-                        kadar her adımda yanınızdayız.</p>
-                    <ul class="space-y-4 mb-10 flex-1">
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-600">Kapsamlı okul araştırması</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-600">Tam essay desteği</span></li>
-                    </ul>
-                    <a href="contact.html"
-                        class="w-full py-4 rounded-full font-bold text-lg text-center border border-primary text-primary hover:bg-primary/5 transition-colors">Hemen
-                        Başlayın</a>
-                </div>
-
-                <!-- Package 2 (Featured) -->
-                <div
-                    class="p-10 rounded-[2.5rem] flex flex-col h-full border border-primary bg-slate-900 text-white shadow-2xl scale-105 z-10">
-                    <div class="mb-8">
-                        <span
-                            class="inline-block px-4 py-1 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-widest mb-4">En
-                            Popüler</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">Bir Yıllık Yoğun Paket</h3>
-                        <p class="text-primary font-semibold">Son Sınıf Odaklı</p>
-                    </div>
-                    <p class="text-sm mb-8 leading-relaxed text-slate-300">Başvuru yılını en verimli şekilde geçirmek
-                        isteyenler için.</p>
-                    <ul class="space-y-4 mb-10 flex-1">
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-300">Stratejik okul listesi</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-300">Essay mükemmelleştirme</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-300">Mülakat hazırlığı</span></li>
-                    </ul>
-                    <a href="contact.html"
-                        class="w-full py-4 rounded-full font-bold text-lg text-center bg-primary hover:bg-primary/90 text-white transition-colors">Hemen
-                        Başlayın</a>
-                </div>
-
-                <!-- Package 3 -->
-                <div
-                    class="p-10 rounded-[2.5rem] flex flex-col h-full border border-slate-200 bg-white shadow-xl hover:-translate-y-2 transition-transform">
-                    <div class="mb-8">
-                        <h3 class="font-display font-bold text-2xl mb-2">Dönemlik Destek</h3>
-                        <p class="text-primary font-semibold">Kısa Vadeli Odak</p>
-                    </div>
-                    <p class="text-sm mb-8 leading-relaxed text-slate-500">Belirli bir dönem veya konu için profesyonel
-                        danışmanlık.</p>
-                    <ul class="space-y-4 mb-10 flex-1">
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-600">Hedefli strateji</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i> <span
-                                class="text-sm text-slate-600">Dosya inceleme</span></li>
-                    </ul>
-                    <a href="contact.html"
-                        class="w-full py-4 rounded-full font-bold text-lg text-center border border-primary text-primary hover:bg-primary/5 transition-colors">Hemen
-                        Başlayın</a>
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-primary/10 rounded-full blur-3xl">
                 </div>
             </div>
-        </div>
+
+            <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+                <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-6">Hangi Program Size
+                    Uygun?</h2>
+                <p class="text-slate-400 text-sm sm:text-base lg:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto">Ücretsiz
+                    danışmanlık görüşmesi ile ihtiyaçlarınızı birlikte belirleyelim.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contact.html"
+                        class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-primary hover:bg-teal-400 text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3">
+                        <span>Ücretsiz Görüşme</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/905408555999" target="_blank"
+                        class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/20 transition-all flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800 relative overflow-hidden">
-        <!-- Footer BG Decoration -->
+    <footer
+        class="bg-slate-900 text-white pt-16 sm:pt-20 pb-8 sm:pb-10 border-t border-slate-800 relative overflow-hidden">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-                <!-- Brand & About -->
-                <div class="lg:col-span-4 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 mb-12 sm:mb-16">
+                <!-- Brand -->
+                <div class="space-y-6 sm:col-span-2 lg:col-span-1">
                     <div class="flex items-center gap-3">
                         <div class="font-display font-bold text-3xl text-primary tracking-tight">BB</div>
                         <div class="h-8 w-px bg-slate-700"></div>
                         <div class="text-sm font-medium tracking-widest text-white uppercase">Birlikte Başaracağız</div>
                     </div>
-                    <p class="text-slate-400 leading-relaxed text-sm pr-4">
-                        Başarı emek gerektirir, Birliktelik bunu sürdürülebilir kılar.
-                    </p>
-                    <!-- Newsletter -->
-                    <div class="pt-4">
-                        <h5 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Bültenimize Katılın
-                        </h5>
-                        <div class="flex gap-2">
-                            <input type="email" placeholder="E-posta adresiniz"
-                                class="bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-primary w-full">
-                            <button
-                                class="bg-primary text-white px-4 py-3 rounded-xl hover:bg-primary/90 transition-colors"><i
-                                    class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
+                    <p class="text-slate-400 leading-relaxed text-sm">Başarı emek gerektirir, Birliktelik bunu
+                        sürdürülebilir kılar.</p>
                 </div>
 
                 <!-- Links -->
-                <div class="lg:col-span-2">
+                <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">Hızlı Bağlantılar</h4>
                     <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li><a href="about.html" class="hover:text-primary transition-colors">Hakkımızda</a>
-                        </li>
-                        <li><a href="academics.html" class="hover:text-primary transition-colors">Programlar</a>
-                        </li>
-                        <li><a href="admissions.html" class="hover:text-primary transition-colors">Kayıt
-                                Kabul</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">İletişim</a>
-                        </li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Hakkımızda</a></li>
+                        <li><a href="academics.html" class="hover:text-primary transition-colors">Programlar</a></li>
+                        <li><a href="admissions.html" class="hover:text-primary transition-colors">Kayıt Kabul</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">İletişim</a></li>
                     </ul>
                 </div>
 
                 <!-- Offices -->
-                <div class="lg:col-span-3">
+                <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">Ofislerimiz</h4>
-                    <div class="space-y-6 text-slate-400 text-sm">
-                        <div class="group cursor-default">
-                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">İstanbul
-                                Merkez</strong>
-                            <p class="leading-relaxed">Mayatech Fabrika, Teknokent<br>İstanbul, Türkiye</p>
+                    <div class="space-y-4 text-slate-400 text-sm">
+                        <div>
+                            <div class="font-bold text-white mb-1">İstanbul</div>
+                            <p>Mayatech Fabrika</p>
                         </div>
-                        <div class="group cursor-default">
-                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">Rotterdam
-                                Şube</strong>
-                            <p class="leading-relaxed">Centraal Station Area<br>Rotterdam, Hollanda</p>
+                        <div>
+                            <div class="font-bold text-white mb-1">Londra</div>
+                            <p>Central London, UK</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact -->
-                <div class="lg:col-span-3">
+                <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">İletişim</h4>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fas fa-phone-alt text-xs"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">Çağrı Merkezi</div>
-                                <div class="text-white font-medium">0 (212) 000 00 00</div>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fab fa-whatsapp text-sm"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">WhatsApp Hattı</div>
-                                <div class="text-white font-medium">0540 855 5999</div>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fas fa-envelope text-xs"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">E-Posta</div>
-                                <div class="text-white font-medium">info@bb.edu.tr</div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="space-y-4 text-slate-400 text-sm">
+                        <a href="mailto:info@bb.edu.tr"
+                            class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>info@bb.edu.tr</span>
+                        </a>
+                        <a href="tel:+905408555999"
+                            class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+90 540 855 5999</span>
+                        </a>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Bottom -->
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-xs text-slate-500">
-                    &copy; 2026 BB Eğitim Danışmanlığı. Tüm hakları saklıdır.
-                </div>
-                <div class="flex gap-6">
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-twitter"></i></a>
-                </div>
+            <div
+                class="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <p class="text-slate-500 text-sm">&copy; 2025 Birlikte Başaracağız. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button (Standard) -->
-    <a href="https://wa.me/905408555999?text=Danışmanlık%20hizmeti%20almak%20istiyorum" target="_blank"
-        class="fixed bottom-6 right-6 z-[9990] bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-        <i class="fab fa-whatsapp text-3xl"></i>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/905408555999" target="_blank"
+        class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white text-xl sm:text-2xl shadow-2xl hover:scale-110 transition-transform z-40">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cookie Consent -->
-    <div id="cookie-consent"
-        class="fixed bottom-6 left-6 z-[9990] max-w-sm w-[calc(100%-3rem)] bg-white/90 backdrop-blur-md border border-slate-200 p-6 rounded-2xl shadow-2xl transform translate-y-[200%] transition-transform duration-500">
-        <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <i class="fas fa-cookie-bite"></i>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-800 text-sm mb-1">Çerez Politikası</h4>
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                    Deneyiminizi iyileştirmek için çerezleri kullanıyoruz.
-                </p>
-                <div class="flex gap-3">
-                    <button onclick="acceptCookies()"
-                        class="bg-primary text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                        Kabul Et
-                    </button>
-                    <button onclick="document.getElementById('cookie-consent').classList.add('translate-y-[200%]')"
-                        class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition-colors">
-                        Reddet
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu Overlay (Moved to Body) -->
-    <div id="mobile-menu" style="background-color: #ffffff !important;"
-        class="fixed inset-0 z-[9999] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col h-full w-full">
-        <!-- Menu Header -->
-        <div class="px-6 py-4 flex justify-between items-center border-b border-slate-100/50">
-            <div class="flex items-center gap-2">
-                <span class="font-display font-extrabold text-2xl text-slate-900 tracking-tight">Menü</span>
-            </div>
-            <button id="close-menu-btn"
-                class="text-slate-900 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-slate-100">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Menu Items -->
-        <nav class="flex-1 flex flex-col px-6 py-8 items-center justify-center gap-1 overflow-y-auto">
-            <a href="index.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Ana
-                Sayfa</a>
-            <a href="about.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Hakkımızda</a>
-            <a href="academics.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Akademik</a>
-            <a href="admissions.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Kayıt</a>
-            <a href="contact.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">İletişim</a>
-
-            <a href="contact.html"
-                class="mt-8 bg-slate-900 text-white rounded-full py-4 px-12 text-center font-bold text-xl shadow-2xl shadow-slate-900/20 hover:scale-105 transition-transform w-full max-w-xs mx-auto">
-                Bilgi Al
-            </a>
-        </nav>
-
-        <!-- Menu Footer -->
-        <div class="p-8 text-center border-t border-slate-100/50">
-            <div class="flex justify-center gap-6 mb-6">
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <p class="text-xs text-slate-400 font-medium tracking-wide">&copy; 2026 BB Eğitim Danışmanlığı</p>
-        </div>
-    </div>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('translate-x-full');
-            document.body.classList.toggle('overflow-hidden');
-        }
-
-        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
-        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        AOS.init({ duration: 800, once: true, offset: 50 });
     </script>
 </body>
 
