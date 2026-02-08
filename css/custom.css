@@ -1,0 +1,93 @@
+/* Custom Premium Styles */
+
+/* 1. RGB/Glow Effects */
+.premium-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-glow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #20B2AA, #0ea5e9, #20B2AA);
+    z-index: -1;
+    border-radius: inherit;
+    background-size: 200% 200%;
+    animation: borderGlow 3s ease infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.premium-glow:hover::before {
+    opacity: 1;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 2. Glassmorphism Utilities */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 3. Header Enhancements */
+#navbar {
+    padding-top: 1.5rem;
+    /* Increased from py-4 */
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+#navbar.scrolled {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Mobile Menu Z-Index Fix */
+#mobile-menu {
+    z-index: 100 !important;
+    /* Force top */
+    padding-top: 2rem;
+}
+
+/* 5. Typography Enhancements */
+.text-gradient {
+    background: linear-gradient(to right, #20B2AA, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 6. Footer Decoration */
+footer {
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #20B2AA, transparent);
+}

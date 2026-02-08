@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - BB Eğitim Danışmanlığı</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#20B2AA', secondary: '#f0fdfc' },
+                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header
+        class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
+                <svg width="48" height="48" viewBox="0 0 100 100" class="drop-shadow-md">
+                    <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="2" />
+                    <text x="35" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#30D5C8"
+                        class="select-none">B</text>
+                    <text x="55" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#0ea5e9"
+                        class="select-none opacity-80" style="mix-blend-mode: multiply;">B</text>
+                </svg>
+                <div class="hidden sm:block">
+                    <h1 class="font-display font-bold text-lg md:text-xl text-primary leading-none tracking-tight">
+                        Birlikte Başaracağız</h1>
+                    <p
+                        class="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest font-medium max-w-[200px] md:max-w-none leading-tight">
+                        Başarı emek gerektirir, Birliktelik bunu sürdürülebilir kılar.</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="index.html"
+                    class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-primary transition-colors">Ana
+                    Sayfa</a>
+                <a href="about.html"
+                    class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-primary transition-colors">Hakkımızda</a>
+                <a href="academics.html"
+                    class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-primary transition-colors">Akademik</a>
+                <a href="admissions.html"
+                    class="px-4 py-2 rounded-full text-sm font-medium text-slate-600 hover:text-primary transition-colors">Kayıt</a>
+                <a href="contact.html"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary">İletişim</a>
+                <a href="contact.html"
+                    class="ml-4 bg-primary hover:bg-teal-600 text-white rounded-full px-6 py-2 font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center transform hover:-translate-y-0.5">Bilgi
+                    Al</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+            <div class="p-4 flex justify-between items-center border-b border-slate-100">
+                <span class="font-display font-bold text-xl text-primary">Menü</span>
+                <button id="close-menu-btn" class="text-slate-600 hover:text-primary p-2">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex-1 flex flex-col p-8 gap-6 overflow-y-auto">
+                <a href="index.html" class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Ana
+                    Sayfa</a>
+                <a href="about.html"
+                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Hakkımızda</a>
+                <a href="academics.html"
+                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Akademik</a>
+                <a href="admissions.html"
+                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Kayıt</a>
+                <a href="contact.html"
+                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">İletişim</a>
+                <a href="contact.html"
+                    class="mt-4 bg-primary text-white rounded-xl py-4 text-center font-bold text-lg shadow-lg">Bilgi
+                    Al</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pt-24 pb-0 min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative py-20 bg-slate-50 overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none">
+            </div>
+
+            <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+                <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">7/24 DESTEK</span>
+                <h1 class="font-display font-bold text-4xl md:text-6xl text-slate-900 mb-6">Bize Ulaşın</h1>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">Geleceğinizi planlamaya bugün
+                    başlayın. Sorularınız için ekibimizle dilediğiniz zaman iletişime geçebilirsiniz.</p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white relative">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+
+                    <!-- Left Column: Info & Map -->
+                    <div class="space-y-12" data-aos="fade-right">
+                        <!-- Info Cards -->
+                        <div class="grid grid-cols-1 gap-6">
+                            <div
+                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
+                                <div
+                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">Genel Merkez</h3>
+                                    <p class="text-slate-500 text-sm leading-relaxed">Mayatech Fabrika<br>İstanbul,
+                                        Türkiye</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
+                                <div
+                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">E-Posta</h3>
+                                    <p class="text-slate-500 text-sm leading-relaxed">info@bb.edu.tr<br>destek@bb.edu.tr
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
+                                <div
+                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">Telefon</h3>
+                                    <p class="text-slate-500 text-sm leading-relaxed">0 (212) 000 00 00<br>Hafta içi:
+                                        09:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div
+                            class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200 h-[400px] relative group">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.8893644917!2d28.871754407373723!3d41.00537021650394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2sİstanbul!5e0!3m2!1str!2str!4v1675200000000!5m2!1str!2str"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="grayscale group-hover:grayscale-0 transition-all duration-700"></iframe>
+                            <div
+                                class="absolute inset-0 pointer-events-none border-[6px] border-white/20 rounded-[2.5rem]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Form -->
+                    <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-primary/5 border border-slate-100 relative overflow-hidden"
+                        data-aos="fade-left">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none">
+                        </div>
+
+                        <h3 class="font-display font-bold text-3xl mb-2 text-slate-900">Mesaj Gönderin</h3>
+                        <p class="text-slate-500 mb-8">Formu doldurun, size en kısa sürede dönüş yapalım.</p>
+
+                        <form class="space-y-6 relative z-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-slate-700 ml-1">Adınız</label>
+                                    <input type="text" placeholder="Adınız"
+                                        class="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-slate-700 ml-1">Soyadınız</label>
+                                    <input type="text" placeholder="Soyadınız"
+                                        class="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700 ml-1">E-Posta Adresi</label>
+                                <input type="email" placeholder="ornek@email.com"
+                                    class="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700 ml-1">Konu</label>
+                                <select
+                                    class="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-slate-600">
+                                    <option>Genel Bilgi</option>
+                                    <option>Kayıt Süreci</option>
+                                    <option>Randevu Talebi</option>
+                                    <option>Diğer</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-700 ml-1">Mesajınız</label>
+                                <textarea placeholder="Mesajınızı buraya yazınız..."
+                                    class="w-full min-h-[160px] p-6 rounded-2xl bg-slate-50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full h-14 bg-gradient-to-r from-primary to-teal-600 hover:to-primary text-white font-bold rounded-2xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300">
+                                Gönder <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-white pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="font-display font-bold text-2xl text-primary">BB</div>
+                            <div class="text-xs uppercase tracking-widest text-slate-400">Birlikte Başaracağız</div>
+                        </div>
+                        <p class="text-slate-400 text-sm">Geleceğin liderlerini yetiştirmek için buradayız.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-lg mb-6 text-primary">Hızlı Bağlantılar</h4>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li><a href="about.html" class="hover:text-primary">Hakkımızda</a></li>
+                            <li><a href="academics.html" class="hover:text-primary">Akademik Programlar</a></li>
+                            <li><a href="admissions.html" class="hover:text-primary">Kayıt Süreci</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-lg mb-6 text-primary">İletişim</h4>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li>Mayatech Fabrika, İstanbul</li>
+                            <li>info@bb.edu.tr</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                    &copy; 2026 BB Eğitim Kurumları. Tüm hakları saklıdır.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>
