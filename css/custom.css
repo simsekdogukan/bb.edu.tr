@@ -63,11 +63,29 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* 4. Mobile Menu Z-Index Fix */
+/* 4. Mobile Menu Z-Index & Styling Fix */
 #mobile-menu {
-    z-index: 100 !important;
-    /* Force top */
-    padding-top: 2rem;
+    z-index: 9999 !important;
+    /* Force absolute top */
+    padding-top: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+}
+
+#mobile-menu nav a {
+    font-size: 1.5rem;
+    /* Larger text for mobile touch */
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    width: 100%;
+    text-align: center;
+}
+
+#mobile-menu nav a:last-child {
+    border-bottom: none;
+    margin-top: 1rem;
 }
 
 /* 5. Typography Enhancements */

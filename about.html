@@ -41,22 +41,25 @@
 
     <!-- Navigation -->
     <header
-        class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 transition-all duration-300"
+        class="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 py-3 md:py-4 transition-all duration-300"
         id="navbar">
-        <div class="container mx-auto px-4 flex items-center justify-between">
+        <div class="container mx-auto px-4 flex items-center justify-between h-16 md:h-auto">
+            <!-- Logo Section -->
             <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
-                <svg width="48" height="48" viewBox="0 0 100 100" class="drop-shadow-md">
+                <!-- SVG Logo: Adjusted size for mobile -->
+                <svg width="40" height="40" viewBox="0 0 100 100" class="drop-shadow-md md:w-[48px] md:h-[48px]">
                     <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="2" />
                     <text x="35" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#30D5C8"
                         class="select-none">B</text>
                     <text x="55" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#0ea5e9"
                         class="select-none opacity-80" style="mix-blend-mode: multiply;">B</text>
                 </svg>
-                <div class="hidden sm:block">
+                <div class="flex flex-col justify-center">
                     <h1 class="font-display font-bold text-lg md:text-xl text-primary leading-none tracking-tight">
                         Birlikte Başaracağız</h1>
+                    <!-- Slogan: Hidden on mobile for cleaner look -->
                     <p
-                        class="text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest font-medium max-w-[200px] md:max-w-none leading-tight">
+                        class="hidden md:block text-[10px] text-slate-500 uppercase tracking-widest font-medium leading-tight mt-1">
                         Başarı emek gerektirir, Birliktelik bunu sürdürülebilir kılar.</p>
                 </div>
             </a>
@@ -79,36 +82,52 @@
                     Al</a>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2">
+            <!-- Mobile Menu Button: Aligned and sized -->
+            <button id="mobile-menu-btn"
+                class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-slate-50 transition-colors">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
-            class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
-            <div class="p-4 flex justify-between items-center border-b border-slate-100">
-                <span class="font-display font-bold text-xl text-primary">Menü</span>
-                <button id="close-menu-btn" class="text-slate-600 hover:text-primary p-2">
+            class="fixed inset-0 bg-white z-[9999] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col h-screen w-screen">
+            <!-- Menu Header -->
+            <div
+                class="px-6 py-4 flex justify-between items-center border-b border-slate-100 bg-white/50 backdrop-blur-sm">
+                <div class="flex items-center gap-2">
+                    <span class="font-display font-bold text-xl text-primary">Menü</span>
+                </div>
+                <button id="close-menu-btn"
+                    class="text-slate-500 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-slate-100">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
-            <nav class="flex-1 flex flex-col p-8 gap-6 overflow-y-auto">
-                <a href="index.html" class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Ana
+
+            <!-- Menu Items -->
+            <nav class="flex-1 flex flex-col p-6 items-center justify-center gap-2 overflow-y-auto bg-slate-50/50">
+                <a href="index.html"
+                    class="font-display font-bold text-2xl text-slate-900 hover:text-primary transition-colors py-3 w-full text-center border-b border-slate-200/50">Ana
                     Sayfa</a>
                 <a href="about.html"
-                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Hakkımızda</a>
+                    class="font-display font-bold text-2xl text-slate-900 hover:text-primary transition-colors py-3 w-full text-center border-b border-slate-200/50">Hakkımızda</a>
                 <a href="academics.html"
-                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Akademik</a>
+                    class="font-display font-bold text-2xl text-slate-900 hover:text-primary transition-colors py-3 w-full text-center border-b border-slate-200/50">Akademik</a>
                 <a href="admissions.html"
-                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">Kayıt</a>
+                    class="font-display font-bold text-2xl text-slate-900 hover:text-primary transition-colors py-3 w-full text-center border-b border-slate-200/50">Kayıt</a>
                 <a href="contact.html"
-                    class="text-2xl font-display font-bold text-slate-900 hover:text-primary">İletişim</a>
+                    class="font-display font-bold text-2xl text-slate-900 hover:text-primary transition-colors py-3 w-full text-center border-b border-slate-200/50">İletişim</a>
+
                 <a href="contact.html"
-                    class="mt-4 bg-primary text-white rounded-xl py-4 text-center font-bold text-lg shadow-lg">Bilgi
-                    Al</a>
+                    class="mt-8 bg-primary text-white rounded-2xl py-4 px-12 text-center font-bold text-xl shadow-xl shadow-primary/20 hover:scale-105 transition-transform w-full max-w-xs mx-auto">
+                    Bilgi Al
+                </a>
             </nav>
+
+            <!-- Menu Footer -->
+            <div class="p-6 text-center text-xs text-slate-400 border-t border-slate-100 bg-white">
+                &copy; 2026 BB Eğitim Danışmanlığı
+            </div>
         </div>
     </header>
 
