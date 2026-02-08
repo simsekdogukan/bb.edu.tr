@@ -125,128 +125,40 @@
         </div>
     </header>
 
-    <div class="pt-20 pb-0 min-h-screen">
+    <div class="pt-24 pb-0 min-h-screen">
 
-        <!-- Split Hero Section -->
-        <section class="relative min-h-[85vh] flex items-center overflow-hidden">
-            <!-- Left: Dark Side with Story -->
-            <div class="hidden lg:flex w-1/2 bg-slate-900 min-h-[85vh] items-center justify-center relative">
-                <!-- Decorative Elements -->
-                <div class="absolute top-0 left-0 w-full h-full">
-                    <div class="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
-                    <div class="absolute bottom-32 right-20 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
-                </div>
+        <!-- Simple Hero Header -->
+        <section class="py-12 sm:py-16 bg-gradient-to-br from-primary/5 via-white to-slate-50 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <span
+                    class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 px-4 py-2 bg-primary/10 rounded-full">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    BİZİ TANIYIN
+                </span>
+                <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-4">Birlikte <span
+                        class="text-primary">Başaracağız</span></h1>
+                <p class="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mb-8">2015'ten beri yüzlerce öğrenciyi
+                    hayallerindeki üniversitelere ulaştırdık. Deneyim, tutku ve sonuç odaklı yaklaşımımızla
+                    yanınızdayız.</p>
 
-                <div class="relative z-10 px-16 py-20 max-w-xl">
-                    <span
-                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-8 px-4 py-2 bg-primary/10 rounded-full">
-                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                        BİZİ TANIYIN
-                    </span>
-
-                    <h1 class="font-display font-bold text-5xl xl:text-6xl text-white mb-8 leading-tight">
-                        Birlikte<br>
-                        <span class="gradient-text">Başaracağız</span>
-                    </h1>
-
-                    <p class="text-slate-400 text-lg leading-relaxed mb-10">
-                        2015'ten beri yüzlerce öğrenciyi hayallerindeki üniversitelere ulaştırdık. Deneyim, tutku ve
-                        sonuç odaklı yaklaşımımızla yanınızdayız.
-                    </p>
-
-                    <!-- Quick Stats -->
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <div class="text-3xl font-bold text-primary mb-1">500+</div>
-                            <p class="text-slate-400 text-sm">Başarılı Öğrenci</p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <div class="text-3xl font-bold text-primary mb-1">%95</div>
-                            <p class="text-slate-400 text-sm">Kabul Oranı</p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <div class="text-3xl font-bold text-primary mb-1">9+</div>
-                            <p class="text-slate-400 text-sm">Yıllık Deneyim</p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-                            <div class="text-3xl font-bold text-primary mb-1">20+</div>
-                            <p class="text-slate-400 text-sm">Ülkede Kabul</p>
-                        </div>
+                <!-- Quick Stats -->
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl font-bold text-primary">500+</div>
+                        <p class="text-slate-500 text-xs sm:text-sm">Başarılı Öğrenci</p>
                     </div>
-                </div>
-            </div>
-
-            <!-- Right: Light Side with Vision/Mission -->
-            <div
-                class="w-full lg:w-1/2 min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 relative px-6 py-16 lg:py-0">
-                <!-- Decorative -->
-                <div
-                    class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-400/5 rounded-full blur-3xl -ml-32 -mb-32">
-                </div>
-
-                <!-- Mobile Header -->
-                <div class="lg:hidden text-center mb-10">
-                    <span
-                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 px-4 py-2 bg-primary/10 rounded-full">
-                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                        BİZİ TANIYIN
-                    </span>
-                    <h1 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-4">Birlikte Başaracağız
-                    </h1>
-                    <p class="text-slate-500 text-base">9 yılı aşkın deneyimimizle yanınızdayız.</p>
-                </div>
-
-                <!-- Vision & Mission Cards -->
-                <div class="glass-card w-full max-w-lg p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-slate-200/50 relative z-10 space-y-6"
-                    data-aos="fade-up">
-
-                    <!-- Vision -->
-                    <div
-                        class="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-blue-500/5 border border-primary/10">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                                <i class="fas fa-eye text-primary text-xl"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-slate-900">Vizyonumuz</h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Türkiye'nin en güvenilir ve başarılı uluslararası eğitim danışmanlığı firması olmak.
-                            Öğrencilerimizin potansiyelini maksimize ederek dünya vatandaşları yetiştirmek.
-                        </p>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl font-bold text-primary">%95</div>
+                        <p class="text-slate-500 text-xs sm:text-sm">Kabul Oranı</p>
                     </div>
-
-                    <!-- Mission -->
-                    <div
-                        class="p-6 rounded-2xl bg-gradient-to-br from-blue-500/5 to-primary/5 border border-blue-500/10">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                                <i class="fas fa-rocket text-blue-500 text-xl"></i>
-                            </div>
-                            <h3 class="font-display font-bold text-xl text-slate-900">Misyonumuz</h3>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Her öğrenciye özel, veri odaklı strateji geliştirmek. Akademik mükemmellik, kişisel gelişim
-                            ve kariyer hedeflerini bir arada harmanlayarak benzersiz başvuru dosyaları oluşturmak.
-                        </p>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl font-bold text-primary">9+</div>
+                        <p class="text-slate-500 text-xs sm:text-sm">Yıllık Deneyim</p>
                     </div>
-
-                    <!-- Values -->
-                    <div class="pt-4 border-t border-slate-100">
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Değerlerimiz</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium">Güven</span>
-                            <span
-                                class="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 text-xs font-medium">Şeffaflık</span>
-                            <span
-                                class="px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 text-xs font-medium">Sonuç
-                                Odaklılık</span>
-                            <span
-                                class="px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-600 text-xs font-medium">Yenilikçilik</span>
-                        </div>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl font-bold text-primary">20+</div>
+                        <p class="text-slate-500 text-xs sm:text-sm">Ülkede Kabul</p>
                     </div>
                 </div>
             </div>
