@@ -122,7 +122,8 @@
                     HİZMETLERİMİZ
                 </span>
                 <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-4">Başarıya Giden
-                    <span class="text-primary">Yolculuğunuz</span></h1>
+                    <span class="text-primary">Yolculuğunuz</span>
+                </h1>
                 <p class="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mb-8">Liseden yüksek lisansa, her adımda
                     yanınızdayız. Kişiselleştirilmiş programlarımızla hayallerinizdeki üniversiteye ulaşın.</p>
 
@@ -476,6 +477,65 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[9999] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col h-full w-full bg-white">
+        <div class="px-6 py-4 flex justify-between items-center border-b border-slate-100">
+            <a href="index.html" class="flex items-center gap-3">
+                <svg width="36" height="36" viewBox="0 0 100 100" class="drop-shadow-sm">
+                    <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="2" />
+                    <text x="35" y="65" font-family="Playfair Display" font-size="45" font-weight="bold"
+                        fill="#30D5C8">B</text>
+                    <text x="55" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#0ea5e9"
+                        style="mix-blend-mode: multiply;">B</text>
+                </svg>
+                <span class="font-display font-bold text-sm text-slate-800">Birlikte Başaracağız</span>
+            </a>
+            <button id="close-menu-btn"
+                class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200 transition-all">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+        <nav class="flex-1 flex flex-col px-6 py-6 gap-0 overflow-y-auto">
+            <a href="index.html"
+                class="flex items-center justify-between py-4 border-b border-slate-100 text-slate-800 hover:text-primary transition-colors">
+                <span class="font-display font-semibold text-lg">Ana Sayfa</span>
+                <i class="fas fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+            <a href="academics.html"
+                class="flex items-center justify-between py-4 border-b border-slate-100 text-primary font-bold">
+                <span class="font-display font-semibold text-lg">Hizmetler</span>
+                <i class="fas fa-chevron-right text-primary text-sm"></i>
+            </a>
+            <a href="admissions.html"
+                class="flex items-center justify-between py-4 border-b border-slate-100 text-slate-800 hover:text-primary transition-colors">
+                <span class="font-display font-semibold text-lg">Kayıt</span>
+                <i class="fas fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+            <a href="contact.html"
+                class="flex items-center justify-between py-4 border-b border-slate-100 text-slate-800 hover:text-primary transition-colors">
+                <span class="font-display font-semibold text-lg">Randevu Al</span>
+                <i class="fas fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+            <a href="about.html"
+                class="flex items-center justify-between py-4 border-b border-slate-100 text-slate-800 hover:text-primary transition-colors">
+                <span class="font-display font-semibold text-lg">Hakkımızda</span>
+                <i class="fas fa-chevron-right text-slate-300 text-sm"></i>
+            </a>
+            <a href="contact.html"
+                class="mt-6 bg-primary text-white rounded-full py-4 px-6 text-center font-semibold shadow-lg shadow-primary/20 hover:bg-teal-600 transition-all">Bilgi
+                Al</a>
+        </nav>
+        <div class="p-6 text-center border-t border-slate-100">
+            <a href="https://wa.me/905408555999" target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#25D366] text-white font-medium text-sm hover:bg-[#1fbd5a] transition-all">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>WhatsApp ile Yazın</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">© 2026 BB Eğitim Danışmanlığı</p>
+        </div>
+    </div>
+
     <!-- WhatsApp Float -->
     <a href="https://wa.me/905408555999" target="_blank"
         class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white text-xl sm:text-2xl shadow-2xl hover:scale-110 transition-transform z-40">
@@ -485,6 +545,19 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 50 });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
     </script>
 </body>
 
