@@ -278,92 +278,140 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="space-y-4">
+    <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800 relative overflow-hidden">
+        <!-- Footer BG Decoration -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                <!-- Brand & About -->
+                <div class="lg:col-span-4 space-y-6">
                     <div class="flex items-center gap-3">
-                        <div class="font-display font-bold text-2xl text-primary">BB</div>
-                        <div class="text-xs uppercase tracking-widest text-slate-400">Birlikte Başaracağız</div>
+                        <div class="font-display font-bold text-3xl text-primary tracking-tight">BB</div>
+                        <div class="h-8 w-px bg-slate-700"></div>
+                        <div class="text-sm font-medium tracking-widest text-white uppercase">Birlikte Başaracağız</div>
                     </div>
-                    <p class="text-slate-400 text-sm">Geleceğin liderlerini yetiştirmek için buradayız.</p>
+                    <p class="text-slate-400 leading-relaxed text-sm pr-4">
+                        Global standartlarda eğitim danışmanlığı ile öğrencilerin potansiyellerini keşfedip, onları
+                        dünyanın en prestijli üniversitelerine hazırlıyoruz.
+                    </p>
+                    <!-- Newsletter -->
+                    <div class="pt-4">
+                        <h5 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Bültenimize Katılın
+                        </h5>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="E-posta adresiniz"
+                                class="bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-primary w-full">
+                            <button
+                                class="bg-primary text-white px-4 py-3 rounded-xl hover:bg-primary/90 transition-colors"><i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-display font-bold text-lg mb-6 text-primary">Hızlı Bağlantılar</h4>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li><a href="about.html" class="hover:text-primary">Hakkımızda</a></li>
-                        <li><a href="academics.html" class="hover:text-primary">Akademik Programlar</a></li>
-                        <li><a href="admissions.html" class="hover:text-primary">Kayıt Süreci</a></li>
+
+                <!-- Links -->
+                <div class="lg:col-span-2 lg:col-start-6">
+                    <h4 class="font-display font-bold text-lg mb-6 text-white">Keşfet</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="about.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-primary opacity-0 hover:opacity-100 transition-opacity"></span>Hakkımızda</a>
+                        </li>
+                        <li><a href="academics.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-primary opacity-0 hover:opacity-100 transition-opacity"></span>Programlar</a>
+                        </li>
+                        <li><a href="admissions.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-primary opacity-0 hover:opacity-100 transition-opacity"></span>Kayıt
+                                Kabul</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-primary transition-colors flex items-center gap-2"><span
+                                    class="w-1 h-1 rounded-full bg-primary opacity-0 hover:opacity-100 transition-opacity"></span>İletişim</a>
+                        </li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-display font-bold text-lg mb-6 text-primary">Ofislerimiz</h4>
-                    <div class="space-y-4 text-slate-400 text-sm">
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
-                            <div>
-                                <strong class="text-white block mb-1">İstanbul</strong>
-                                Mayatech Fabrika, Teknokent
-                            </div>
+
+                <!-- Offices -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-display font-bold text-lg mb-6 text-white">Ofislerimiz</h4>
+                    <div class="space-y-6 text-slate-400 text-sm">
+                        <div class="group cursor-default">
+                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">İstanbul
+                                Merkez</strong>
+                            <p class="leading-relaxed">Mayatech Fabrika, Teknokent<br>İstanbul, Türkiye</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-globe-europe text-primary mt-1"></i>
-                            <div>
-                                <strong class="text-white block mb-1">Hollanda</strong>
-                                Rotterdam, The Netherlands
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fas fa-envelope text-primary mt-1"></i>
-                            <div>
-                                <strong class="text-white block mb-1">E-posta</strong>
-                                info@bb.edu.tr
-                            </div>
+                        <div class="group cursor-default">
+                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">Rotterdam
+                                Şube</strong>
+                            <p class="leading-relaxed">Centraal Station Area<br>Rotterdam, Hollanda</p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-display font-bold text-lg mb-6 text-primary">Sosyal Medya</h4>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/50 hover:-translate-y-1"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/50 hover:-translate-y-1"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/50 hover:-translate-y-1"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-primary/50 hover:-translate-y-1"><i
-                                class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <p class="text-xs text-slate-500 mt-6 leading-relaxed">Güncel başarı hikayeleri ve duyurular için
-                        bizi takip edin.</p>
+
+                <!-- Contact -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-display font-bold text-lg mb-6 text-white">İletişim</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-phone-alt text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 mb-0.5">Çağrı Merkezi</div>
+                                <div class="text-white font-medium">0 (212) 000 00 00</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 mb-0.5">WhatsApp Hattı</div>
+                                <div class="text-white font-medium">0540 855 5999</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
+                                <i class="fas fa-envelope text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 mb-0.5">E-Posta</div>
+                                <div class="text-white font-medium">info@bb.edu.tr</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-                &copy; 2026 BB Eğitim Kurumları. Tüm hakları saklıdır.
+
+            <!-- Bottom -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-xs text-slate-500">
+                    &copy; 2026 BB Eğitim Danışmanlığı. Tüm hakları saklıdır.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button (Glassmorphic Premium) -->
-    <a href="https://wa.me/905408555999?text=Danışmanlık%20hizmeti%20almak%20istiyorum" target="_blank" class="fixed bottom-6 left-6 z-[9990] flex items-center gap-4 p-4 rounded-full
-               bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl
-               group hover:bg-slate-900/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#25D366]/30">
-        <div class="relative">
-            <div class="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20"></div>
-            <div
-                class="w-12 h-12 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-lg relative z-10">
-                <i class="fab fa-whatsapp text-2xl text-white"></i>
-            </div>
-        </div>
-        <div
-            class="flex flex-col max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 opacity-0 group-hover:opacity-100">
-            <span class="text-[10px] text-slate-300 uppercase tracking-wider leading-none mb-1">Online Danışman</span>
-            <span class="font-display font-bold text-white text-sm whitespace-nowrap">0540 855 5999</span>
-        </div>
+    <span class="font-display font-bold text-white text-sm whitespace-nowrap">0540 855 5999</span>
+    </div>
     </a>
 
     <!-- Cookie Consent -->
