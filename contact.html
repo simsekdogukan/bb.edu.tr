@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/custom.css?v=2">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         html {
             background-color: #0f172a;
@@ -19,6 +20,48 @@
 
         body {
             background-color: #f8fafc;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            backdrop-filter: blur(20px);
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #30D5C8 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-form {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .input-focus:focus {
+            box-shadow: 0 0 0 4px rgba(48, 213, 200, 0.15);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
     </style>
     <script>
@@ -47,7 +90,6 @@
         <div class="container mx-auto px-4 flex items-center justify-between h-16 md:h-auto">
             <!-- Logo Section -->
             <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
-                <!-- SVG Logo: Adjusted size for mobile -->
                 <svg width="40" height="40" viewBox="0 0 100 100" class="drop-shadow-md md:w-[48px] md:h-[48px]">
                     <circle cx="50" cy="50" r="45" fill="white" stroke="#30D5C8" stroke-width="2" />
                     <text x="35" y="65" font-family="Playfair Display" font-size="45" font-weight="bold" fill="#30D5C8"
@@ -79,175 +121,386 @@
                     Al</a>
             </nav>
 
-            <!-- Mobile Menu Button: Aligned and sized -->
+            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn"
                 class="md:hidden text-slate-600 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-slate-50 transition-colors">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-
-
     </header>
 
-    <div class="pt-24 pb-0 min-h-screen">
-        <!-- Hero Section -->
-        <section class="relative py-20 bg-slate-50 overflow-hidden">
-            <div
-                class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none">
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl -ml-48 -mb-48 pointer-events-none">
+    <div class="pt-20 pb-0 min-h-screen">
+
+        <!-- Split Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+            <!-- Left: Dark Side with Info -->
+            <div class="hidden lg:flex w-1/2 bg-slate-900 min-h-[85vh] items-center justify-center relative">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-32 right-20 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
+                    <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-primary/5 rounded-full blur-xl"></div>
+                </div>
+
+                <div class="relative z-10 px-16 py-20 max-w-xl">
+                    <span
+                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-8 px-4 py-2 bg-primary/10 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        7/24 DESTEK
+                    </span>
+
+                    <h1 class="font-display font-bold text-5xl xl:text-6xl text-white mb-8 leading-tight">
+                        Hayallerinizi<br>
+                        <span class="gradient-text">Gerçeğe</span> Dönüştürün
+                    </h1>
+
+                    <p class="text-slate-400 text-lg leading-relaxed mb-12">
+                        Dünyanın en prestijli üniversitelerine giden yolda yanınızdayız. Ücretsiz danışmanlık görüşmesi
+                        için hemen iletişime geçin.
+                    </p>
+
+                    <!-- Quick Contact Cards -->
+                    <div class="space-y-4">
+                        <a href="tel:+905408555999"
+                            class="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-phone text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-sm">Hemen Arayın</p>
+                                <p class="text-white font-bold text-lg">+90 540 855 5999</p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-primary/50 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <a href="mailto:info@bb.edu.tr"
+                            class="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 text-sm">E-posta Gönderin</p>
+                                <p class="text-white font-bold text-lg">info@bb.edu.tr</p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-primary/50 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <a href="https://wa.me/905408555999" target="_blank"
+                            class="flex items-center gap-5 p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all group">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="fab fa-whatsapp text-emerald-400 text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-emerald-300/70 text-sm">Anında Yanıt</p>
+                                <p class="text-white font-bold text-lg">WhatsApp ile Yazın</p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-emerald-400/50 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-up">
-                <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">7/24 DESTEK</span>
-                <h1 class="font-display font-bold text-4xl md:text-6xl text-slate-900 mb-6">Bize Ulaşın</h1>
-                <p class="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">Geleceğinizi planlamaya bugün
-                    başlayın. Sorularınız için ekibimizle dilediğiniz zaman iletişime geçebilirsiniz.</p>
+            <!-- Right: Light Side with Form -->
+            <div
+                class="w-full lg:w-1/2 min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 relative px-6 py-16 lg:py-0">
+                <!-- Decorative -->
+                <div
+                    class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-400/5 rounded-full blur-3xl -ml-32 -mb-32">
+                </div>
+
+                <!-- Mobile Header (shown only on mobile) -->
+                <div class="lg:hidden text-center mb-10">
+                    <span
+                        class="inline-flex items-center gap-2 text-primary font-bold tracking-[0.2em] text-xs uppercase mb-4 px-4 py-2 bg-primary/10 rounded-full">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        7/24 DESTEK
+                    </span>
+                    <h1 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-4">Bize Ulaşın</h1>
+                    <p class="text-slate-500 text-base">Ücretsiz danışmanlık görüşmesi için hemen iletişime geçin.</p>
+                </div>
+
+                <!-- Form Card -->
+                <div class="glass-form w-full max-w-lg p-8 md:p-10 rounded-[2rem] shadow-2xl shadow-slate-200/50 relative z-10"
+                    data-aos="fade-up">
+
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-4">
+                            <i class="fas fa-paper-plane text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl md:text-3xl text-slate-900 mb-2">Ücretsiz Danışmanlık
+                        </h2>
+                        <p class="text-slate-500 text-sm">Formu doldurun, 24 saat içinde size dönelim.</p>
+                    </div>
+
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs font-bold text-slate-600 mb-2 block">Adınız</label>
+                                <input type="text" placeholder="Adınız"
+                                    class="w-full h-12 px-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all placeholder:text-slate-400 text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-slate-600 mb-2 block">Soyadınız</label>
+                                <input type="text" placeholder="Soyadınız"
+                                    class="w-full h-12 px-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all placeholder:text-slate-400 text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs font-bold text-slate-600 mb-2 block">E-posta</label>
+                                <input type="email" placeholder="ornek@email.com"
+                                    class="w-full h-12 px-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all placeholder:text-slate-400 text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-slate-600 mb-2 block">Telefon</label>
+                                <input type="tel" placeholder="+90 5XX XXX XX XX"
+                                    class="w-full h-12 px-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all placeholder:text-slate-400 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-slate-600 mb-2 block">İlgilendiğiniz Hizmet</label>
+                            <select
+                                class="w-full h-12 px-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all text-slate-600 text-sm">
+                                <option>Lise Programları</option>
+                                <option>Üniversite Başvurusu</option>
+                                <option>Master ve MBA</option>
+                                <option>Akademik Özel Ders</option>
+                                <option>Genel Bilgi</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-bold text-slate-600 mb-2 block">Mesajınız</label>
+                            <textarea placeholder="Hedeflerinizi ve beklentilerinizi paylaşın..." rows="3"
+                                class="w-full p-4 rounded-xl bg-white border border-slate-200 focus:border-primary input-focus outline-none transition-all placeholder:text-slate-400 text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="button"
+                            class="w-full py-4 bg-gradient-to-r from-primary to-teal-500 text-white rounded-xl font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                            <span>Ücretsiz Görüşme Talep Et</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- Trust Badges -->
+                    <div class="mt-8 pt-6 border-t border-slate-100">
+                        <div class="flex items-center justify-center gap-6 text-slate-400 text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-shield-alt text-primary"></i>
+                                <span>Güvenli</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-clock text-primary"></i>
+                                <span>24 Saat İçinde Dönüş</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-star text-primary"></i>
+                                <span>%100 Memnuniyet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="py-16 bg-white relative">
+        <!-- Stats Section -->
+        <section class="py-16 bg-slate-900 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="0">
+                        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
+                        <p class="text-slate-400 text-sm">Başarılı Öğrenci</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+                        <p class="text-slate-400 text-sm">Partner Üniversite</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">%95</div>
+                        <p class="text-slate-400 text-sm">Kabul Oranı</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+                        <p class="text-slate-400 text-sm">Destek</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Office Location Section -->
+        <section class="py-24 bg-white relative overflow-hidden">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span
+                        class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">LOKASYONLAR</span>
+                    <h2 class="font-display font-bold text-3xl md:text-5xl text-slate-900 mb-6">Ofislerimiz</h2>
+                    <p class="text-slate-500 text-lg max-w-2xl mx-auto">Küresel ağımızla her kıtadan öğrencilere hizmet
+                        veriyoruz.</p>
+                </div>
 
-                    <!-- Left Column: Info & Map -->
-                    <div class="space-y-12" data-aos="fade-right">
-                        <!-- Info Cards -->
-                        <div class="grid grid-cols-1 gap-6">
-                            <div
-                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
-                                <div
-                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">Genel Merkez</h3>
-                                    <p class="text-slate-500 text-sm leading-relaxed">Mayatech Fabrika<br>İstanbul,
-                                        Türkiye</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
-                                <div
-                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-envelope text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">E-Posta</h3>
-                                    <p class="text-slate-500 text-sm leading-relaxed">info@bb.edu.tr<br>destek@bb.edu.tr
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="flex items-start gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-all group premium-glow">
-                                <div
-                                    class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-phone text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display font-bold text-xl text-slate-900 mb-1">Telefon</h3>
-                                    <p class="text-slate-500 text-sm leading-relaxed">0 (212) 000 00 00<br>Hafta içi:
-                                        09:00 - 18:00</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Map -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Istanbul Office -->
+                    <div class="group p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all"
+                        data-aos="fade-up" data-aos-delay="0">
                         <div
-                            class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200 h-[400px] relative group">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.8893644917!2d28.871754407373723!3d41.00537021650394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2sİstanbul!5e0!3m2!1str!2str!4v1675200000000!5m2!1str!2str"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                class="grayscale group-hover:grayscale-0 transition-all duration-700"></iframe>
-                            <div
-                                class="absolute inset-0 pointer-events-none border-[6px] border-white/20 rounded-[2.5rem]">
-                            </div>
+                            class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-building text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-slate-900 mb-2">İstanbul</h3>
+                        <p class="text-slate-500 text-sm mb-4">Genel Merkez</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mayatech Fabrika<br>
+                            Kadıköy, İstanbul<br>
+                            Türkiye
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-slate-100">
+                            <a href="#"
+                                class="text-primary font-medium text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                <span>Haritada Gör</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Right Column: Contact Form -->
-                    <div class="bg-white/80 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-primary/5 border border-white/50 relative overflow-hidden"
-                        data-aos="fade-left">
+                    <!-- London Office -->
+                    <div class="group p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all"
+                        data-aos="fade-up" data-aos-delay="100">
                         <div
-                            class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none">
+                            class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-globe-europe text-primary text-2xl"></i>
                         </div>
-
-                        <!-- WhatsApp Notice -->
-                        <div class="mb-8 p-6 rounded-3xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 flex items-center gap-5 group cursor-pointer hover:shadow-lg hover:shadow-emerald-500/10 transition-all"
-                            onclick="window.open('https://wa.me/905408555999', '_blank')">
-                            <div
-                                class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#25D366] text-2xl shadow-sm group-hover:scale-110 transition-transform">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg">Hızlı Danışmanlık</h4>
-                                <p class="text-slate-500 text-sm">Form doldurmadan önce WhatsApp üzerinden anında
-                                    randevu alabilirsiniz.</p>
-                            </div>
-                            <i
-                                class="fas fa-arrow-right text-emerald-300 ml-auto group-hover:translate-x-1 transition-transform"></i>
+                        <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Londra</h3>
+                        <p class="text-slate-500 text-sm mb-4">Avrupa Ofisi</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Central London<br>
+                            United Kingdom
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-slate-100">
+                            <a href="#"
+                                class="text-primary font-medium text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                <span>Haritada Gör</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
+                    </div>
 
-                        <h3 class="font-display font-bold text-3xl mb-2 text-slate-900">Mesaj Gönderin</h3>
-                        <p class="text-slate-500 mb-8">Formu doldurun, size en kısa sürede dönüş yapalım.</p>
+                    <!-- Atlanta Office -->
+                    <div class="group p-8 rounded-3xl bg-gradient-to-br from-slate-50 to-white border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-globe-americas text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Atlanta</h3>
+                        <p class="text-slate-500 text-sm mb-4">Amerika Ofisi</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Atlanta, Georgia<br>
+                            United States
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-slate-100">
+                            <a href="#"
+                                class="text-primary font-medium text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                <span>Haritada Gör</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <form class="space-y-6 relative z-10">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold text-slate-700 ml-1">Adınız</label>
-                                    <input type="text" placeholder="Adınız"
-                                        class="w-full h-14 px-6 rounded-2xl bg-white/50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold text-slate-700 ml-1">Soyadınız</label>
-                                    <input type="text" placeholder="Soyadınız"
-                                        class="w-full h-14 px-6 rounded-2xl bg-white/50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
-                                </div>
-                            </div>
+        <!-- FAQ Section -->
+        <section class="py-24 bg-slate-50 relative">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase mb-4 block">SSS</span>
+                        <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-6">Sıkça Sorulan
+                            Sorular</h2>
+                    </div>
 
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-700 ml-1">E-Posta Adresi</label>
-                                <input type="email" placeholder="ornek@email.com"
-                                    class="w-full h-14 px-6 rounded-2xl bg-white/50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400">
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-700 ml-1">Konu</label>
-                                <select
-                                    class="w-full h-14 px-6 rounded-2xl bg-white/50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all text-slate-600">
-                                    <option>Genel Bilgi</option>
-                                    <option>Kayıt Süreci</option>
-                                    <option>Randevu Talebi</option>
-                                    <option>Diğer</option>
-                                </select>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-700 ml-1">Mesajınız</label>
-                                <textarea placeholder="Mesajınızı buraya yazınız..." rows="4"
-                                    class="w-full p-6 rounded-2xl bg-white/50 border border-slate-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all placeholder:text-slate-400 resize-none"></textarea>
-                            </div>
-
-                            <button type="button"
-                                class="w-full py-5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
-                                <span>Gönder</span>
-                                <i class="fas fa-paper-plane text-sm"></i>
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                        <!-- FAQ Item 1 -->
+                        <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                            <button class="w-full px-6 py-5 text-left flex items-center justify-between group"
+                                onclick="this.parentElement.classList.toggle('active')">
+                                <span class="font-bold text-slate-900">Danışmanlık görüşmesi ücretli mi?</span>
+                                <i class="fas fa-plus text-primary transition-transform"></i>
                             </button>
-                        </form>
-                    </div>
+                            <div class="px-6 pb-5 hidden">
+                                <p class="text-slate-500 text-sm leading-relaxed">İlk danışmanlık görüşmemiz tamamen
+                                    ücretsizdir. Bu görüşmede hedeflerinizi öğreniyor ve size uygun yol haritasını
+                                    çıkarıyoruz.</p>
+                            </div>
+                        </div>
 
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                            <button class="w-full px-6 py-5 text-left flex items-center justify-between group"
+                                onclick="this.parentElement.classList.toggle('active')">
+                                <span class="font-bold text-slate-900">Online danışmanlık hizmeti var mı?</span>
+                                <i class="fas fa-plus text-primary transition-transform"></i>
+                            </button>
+                            <div class="px-6 pb-5 hidden">
+                                <p class="text-slate-500 text-sm leading-relaxed">Evet, tüm danışmanlık hizmetlerimizi
+                                    online olarak da sunuyoruz. Zoom, Google Meet veya tercih ettiğiniz platform
+                                    üzerinden görüşebiliriz.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                            <button class="w-full px-6 py-5 text-left flex items-center justify-between group"
+                                onclick="this.parentElement.classList.toggle('active')">
+                                <span class="font-bold text-slate-900">Hangi ülkelerdeki üniversitelere başvuru
+                                    yapabiliyorsunuz?</span>
+                                <i class="fas fa-plus text-primary transition-transform"></i>
+                            </button>
+                            <div class="px-6 pb-5 hidden">
+                                <p class="text-slate-500 text-sm leading-relaxed">ABD, İngiltere, Kanada, Hollanda,
+                                    Almanya ve daha birçok ülkedeki prestijli üniversitelere başvuru desteği sağlıyoruz.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                            <button class="w-full px-6 py-5 text-left flex items-center justify-between group"
+                                onclick="this.parentElement.classList.toggle('active')">
+                                <span class="font-bold text-slate-900">Ne kadar sürede geri dönüş alırım?</span>
+                                <i class="fas fa-plus text-primary transition-transform"></i>
+                            </button>
+                            <div class="px-6 pb-5 hidden">
+                                <p class="text-slate-500 text-sm leading-relaxed">Form doldurduktan sonra 24 saat içinde
+                                    size geri dönüş yapıyoruz. Acil durumlar için WhatsApp hattımızdan anında iletişim
+                                    kurabilirsiniz.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
     </div>
+
     <!-- Footer -->
     <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800 relative overflow-hidden mb-0">
-        <!-- Footer BG Decoration -->
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
         </div>
@@ -283,14 +536,10 @@
                 <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">Hızlı Bağlantılar</h4>
                     <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li><a href="about.html" class="hover:text-primary transition-colors">Hakkımızda</a>
-                        </li>
-                        <li><a href="academics.html" class="hover:text-primary transition-colors">Programlar</a>
-                        </li>
-                        <li><a href="admissions.html" class="hover:text-primary transition-colors">Kayıt
-                                Kabul</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition-colors">İletişim</a>
-                        </li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Hakkımızda</a></li>
+                        <li><a href="academics.html" class="hover:text-primary transition-colors">Programlar</a></li>
+                        <li><a href="admissions.html" class="hover:text-primary transition-colors">Kayıt Kabul</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">İletişim</a></li>
                     </ul>
                 </div>
 
@@ -298,15 +547,17 @@
                 <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">Ofislerimiz</h4>
                     <div class="space-y-6 text-slate-400 text-sm">
-                        <div class="group cursor-default">
-                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">İstanbul
-                                Merkez</strong>
-                            <p class="leading-relaxed">Mayatech Fabrika, Teknokent<br>İstanbul, Türkiye</p>
+                        <div>
+                            <div class="font-bold text-white mb-1">İstanbul</div>
+                            <p>Mayatech Fabrika</p>
                         </div>
-                        <div class="group cursor-default">
-                            <strong class="text-white block mb-1 group-hover:text-primary transition-colors">Rotterdam
-                                Şube</strong>
-                            <p class="leading-relaxed">Centraal Station Area<br>Rotterdam, Hollanda</p>
+                        <div>
+                            <div class="font-bold text-white mb-1">Londra</div>
+                            <p>Central London, UK</p>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white mb-1">Atlanta</div>
+                            <p>Georgia, USA</p>
                         </div>
                     </div>
                 </div>
@@ -314,172 +565,86 @@
                 <!-- Contact -->
                 <div>
                     <h4 class="font-display font-bold text-lg mb-6 text-white">İletişim</h4>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fas fa-phone-alt text-xs"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">Çağrı Merkezi</div>
-                                <div class="text-white font-medium">0 (212) 000 00 00</div>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fab fa-whatsapp text-sm"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">WhatsApp Hattı</div>
-                                <div class="text-white font-medium">0540 855 5999</div>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
-                                <i class="fas fa-envelope text-xs"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 mb-0.5">E-Posta</div>
-                                <div class="text-white font-medium">info@bb.edu.tr</div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="space-y-4 text-slate-400 text-sm">
+                        <a href="mailto:info@bb.edu.tr"
+                            class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>info@bb.edu.tr</span>
+                        </a>
+                        <a href="tel:+905408555999"
+                            class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+90 540 855 5999</span>
+                        </a>
+                        <a href="https://wa.me/905408555999" target="_blank"
+                            class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <i class="fab fa-whatsapp text-primary"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="flex gap-3 mt-6">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Bottom -->
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-xs text-slate-500">
-                    &copy; 2026 BB Eğitim Danışmanlığı. Tüm hakları saklıdır.
-                </div>
-                <div class="flex gap-6">
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"><i
-                            class="fab fa-twitter"></i></a>
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2025 Birlikte Başaracağız. Tüm hakları saklıdır.</p>
+                <div class="flex gap-6 text-slate-500 text-sm">
+                    <a href="#" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+                    <a href="#" class="hover:text-primary transition-colors">Kullanım Şartları</a>
                 </div>
             </div>
         </div>
     </footer>
 
-
-    <!-- WhatsApp Floating Button (Standard) -->
-    <a href="https://wa.me/905408555999?text=Danışmanlık%20hizmeti%20almak%20istiyorum" target="_blank"
-        class="fixed bottom-6 right-6 z-[9990] bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-        <i class="fab fa-whatsapp text-3xl"></i>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/905408555999" target="_blank"
+        class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:scale-110 transition-transform z-40">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cookie Consent -->
-    <div id="cookie-consent"
-        class="fixed bottom-6 left-6 z-[9990] max-w-sm w-[calc(100%-3rem)] bg-white/90 backdrop-blur-md border border-slate-200 p-6 rounded-2xl shadow-2xl transform translate-y-[200%] transition-transform duration-500">
-        <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <i class="fas fa-cookie-bite"></i>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-800 text-sm mb-1">Çerez Politikası</h4>
-                <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                    Deneyiminizi iyileştirmek için çerezleri kullanıyoruz.
-                </p>
-                <div class="flex gap-3">
-                    <button onclick="acceptCookies()"
-                        class="bg-primary text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                        Kabul Et
-                    </button>
-                    <button onclick="document.getElementById('cookie-consent').classList.add('translate-y-[200%]')"
-                        class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-500 hover:bg-slate-100 transition-colors">
-                        Reddet
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile Menu Overlay (Moved to Body) -->
-    <div id="mobile-menu" style="background-color: #ffffff !important;"
-        class="fixed inset-0 z-[9999] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col h-full w-full">
-        <!-- Menu Header -->
-        <div class="px-6 py-4 flex justify-between items-center border-b border-slate-100/50">
-            <div class="flex items-center gap-2">
-                <span class="font-display font-extrabold text-2xl text-slate-900 tracking-tight">Menü</span>
-            </div>
-            <button id="close-menu-btn"
-                class="text-slate-900 hover:text-red-500 transition-colors p-2 rounded-full hover:bg-slate-100">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Menu Items -->
-        <nav class="flex-1 flex flex-col px-6 py-8 items-center justify-center gap-1 overflow-y-auto">
-            <a href="index.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Ana
-                Sayfa</a>
-            <a href="about.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Hakkımızda</a>
-            <a href="academics.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Akademik</a>
-            <a href="admissions.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">Kayıt</a>
-            <a href="contact.html"
-                class="font-display font-black text-3xl text-slate-900 hover:text-primary transition-all py-2 w-full text-center tracking-tight hover:tracking-wide">İletişim</a>
-
-            <a href="contact.html"
-                class="mt-8 bg-slate-900 text-white rounded-full py-4 px-12 text-center font-bold text-xl shadow-2xl shadow-slate-900/20 hover:scale-105 transition-transform w-full max-w-xs mx-auto">
-                Bilgi Al
-            </a>
-        </nav>
-
-        <!-- Menu Footer -->
-        <div class="p-8 text-center border-t border-slate-100/50">
-            <div class="flex justify-center gap-6 mb-6">
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#"
-                    class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all text-xl shadow-sm">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <p class="text-xs text-slate-400 font-medium tracking-wide">&copy; 2026 BB Eğitim Danışmanlığı</p>
-        </div>
-    </div>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 800,
             once: true,
-            offset: 100
+            offset: 50
         });
 
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // FAQ Toggle
+        document.querySelectorAll('.bg-white.rounded-2xl button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parent = btn.parentElement;
+                const content = parent.querySelector('.hidden, .block');
+                const icon = btn.querySelector('i');
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('translate-x-full');
-            document.body.classList.toggle('overflow-hidden');
-        }
-
-        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMenu);
-        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    content.classList.add('block');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    content.classList.add('hidden');
+                    content.classList.remove('block');
+                    icon.classList.add('fa-plus');
+                    icon.classList.remove('fa-minus');
+                }
+            });
+        });
     </script>
 </body>
 
