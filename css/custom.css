@@ -1,5 +1,13 @@
 /* Custom Premium Styles */
 
+/* Global Reset for Layout Stability */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
 /* 1. RGB/Glow Effects */
 .premium-glow {
     position: relative;
